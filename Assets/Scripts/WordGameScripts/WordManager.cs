@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,28 @@ public class WordManager : MonoBehaviour {
 
 	public WordSpawner wordSpawner;
 
-	private int wordsTyped = 0;
+	private float earnedMoney = 0;
 
 	private bool hasActiveWord;
 	private Word activeWord;
 
+	[SerializeField] private GameObject gameOverImage;
+
+	private void Start() {
+		WordDisplay.OnWordGameOver += OnWordGameOver_Action;
+	}
+
+	private void OnWordGameOver_Action(object sender, EventArgs e){
+		gameOverImage.SetActive(true);
+		GetComponent<WordTimer>().enabled = false;
+		PlayerPrefsData.Money += earnedMoney;
+
+		WordDisplay.OnWordGameOver -= OnWordGameOver_Action;
+	}
+
 	public void AddWord ()
 	{
 		Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
-		Debug.Log(word.word);
 
 		words.Add(word);
 	}
@@ -47,8 +61,7 @@ public class WordManager : MonoBehaviour {
 		{
 			hasActiveWord = false;
 			words.Remove(activeWord);
-			wordsTyped++;
-			Debug.Log(wordsTyped);
+			earnedMoney++;
 		}
 	}
 
