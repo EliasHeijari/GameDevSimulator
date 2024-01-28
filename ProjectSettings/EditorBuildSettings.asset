@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EliasPlayground.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/AleksiPlayground.unity
+    guid: 85c4a90174288144f8bb9609f3330263
+  - enabled: 1
+    path: Assets/Scenes/ArttuPlayground.unity
+    guid: 364a48b1264fa134eb123784cbde57c4
+  - enabled: 1
+    path: Assets/Scenes/ComputerScene.unity
+    guid: 5a65dc79e5b933d44aff890634c80bfd
+  - enabled: 1
+    path: Assets/Scenes/Energyminigame.unity
+    guid: 6d58edf4699be494eb9a4dc8a83b239e
   m_configObjects: {}
