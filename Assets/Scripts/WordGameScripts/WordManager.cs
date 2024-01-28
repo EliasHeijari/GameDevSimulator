@@ -9,8 +9,6 @@ public class WordManager : MonoBehaviour {
 
 	public WordSpawner wordSpawner;
 
-	private float earnedMoney = 0;
-
 	private bool hasActiveWord;
 	private Word activeWord;
 
@@ -23,7 +21,6 @@ public class WordManager : MonoBehaviour {
 	private void OnWordGameOver_Action(object sender, EventArgs e){
 		gameOverImage.SetActive(true);
 		GetComponent<WordTimer>().enabled = false;
-		PlayerPrefsData.Money += earnedMoney;
 
 		WordDisplay.OnWordGameOver -= OnWordGameOver_Action;
 	}
@@ -61,7 +58,7 @@ public class WordManager : MonoBehaviour {
 		{
 			hasActiveWord = false;
 			words.Remove(activeWord);
-			earnedMoney++;
+			PlayerPrefsData.Money = 1;
 		}
 	}
 
