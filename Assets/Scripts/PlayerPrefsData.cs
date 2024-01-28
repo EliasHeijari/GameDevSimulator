@@ -27,4 +27,16 @@ public class PlayerPrefsData : MonoBehaviour
         }
     }
 
+    public static int Cigarettes {
+        get {
+            return PlayerPrefs.GetInt("Cigarettes");
+        }
+        set {
+            if (PlayerPrefs.HasKey("Cigarettes")){
+                PlayerPrefs.SetInt("Cigarettes",PlayerPrefs.GetInt("Cigarettes") + value);
+            }
+            else PlayerPrefs.SetInt("Cigarettes", value);
+        }
+    }
+
 }

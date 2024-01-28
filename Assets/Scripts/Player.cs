@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
             vitutus = value;
             if (vitutus <= 0) vitutus = 0;
             VitutusMeter.fillAmount = vitutus;
+            if (vitutus >= 0.99f) Application.Quit();
         }
     }
 
@@ -29,5 +30,12 @@ public class Player : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
         Vitutus = 0.1f; // when game starts vitutus
-    }     
+        InvokeRepeating("IncreaseVitutus", 0.1f, 0.1f);
+    }
+
+
+    private void IncreaseVitutus(){
+        Vitutus += 0.00025f;
+    }
+
 }
