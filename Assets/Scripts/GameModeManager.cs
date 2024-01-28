@@ -32,7 +32,6 @@ public class GameModeManager : MonoBehaviour
         set{
             currentGameMode = value;
             LevelManager.Instance.LoadGameModeScene(currentGameMode);
-            Debug.Log(gameMode.ToString());
         }
     }
 
