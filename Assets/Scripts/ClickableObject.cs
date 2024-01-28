@@ -26,7 +26,7 @@ public class ClickableObject : MonoBehaviour
         OnCollisionClicked?.Invoke(this, EventArgs.Empty);
     }
     private void OnMouseEnter() {
-        spriteRenderer.color = GetColorWithNewAlpha(spriteRenderer.color, 0.3f);
+        spriteRenderer.color = GetColorWithNewAlpha(spriteRenderer.color, 0.7f);
     }
     private void OnMouseExit() {
         spriteRenderer.color = GetColorWithNewAlpha(spriteRenderer.color, 1f);
