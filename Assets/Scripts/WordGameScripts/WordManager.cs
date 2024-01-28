@@ -22,7 +22,6 @@ public class WordManager : MonoBehaviour {
 		gameOverImage.SetActive(true);
 		GetComponent<WordTimer>().enabled = false;
 		Player.Instance.Vitutus = Player.Instance.Vitutus + 0.2f;
-		Debug.Log(Player.Instance.Vitutus);
 
 		WordDisplay.OnWordGameOver -= OnWordGameOver_Action;
 	}
