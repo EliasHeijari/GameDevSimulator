@@ -21,6 +21,8 @@ public class WordManager : MonoBehaviour {
 	private void OnWordGameOver_Action(object sender, EventArgs e){
 		gameOverImage.SetActive(true);
 		GetComponent<WordTimer>().enabled = false;
+		Player.Instance.Vitutus = Player.Instance.Vitutus + 0.2f;
+		Debug.Log(Player.Instance.Vitutus);
 
 		WordDisplay.OnWordGameOver -= OnWordGameOver_Action;
 	}
@@ -59,6 +61,7 @@ public class WordManager : MonoBehaviour {
 			hasActiveWord = false;
 			words.Remove(activeWord);
 			PlayerPrefsData.Money = 1;
+			Player.Instance.Vitutus = Player.Instance.Vitutus -0.003f;
 		}
 	}
 

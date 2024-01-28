@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordManager: {fileID: 302346575}
-  wordDelay: 2.5
+  wordDelay: 2
 --- !u!114 &302346574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,7 +1110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e519e56e6afbbb04084f8105d484a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
+  dontDestroyOnLoad: 0
+  makeInstance: 0
   MainModeScene: MainScene
   EnergyDrinkModeScene: EnergyDrinkScene
   ComputerModeScene: ComputerScene
